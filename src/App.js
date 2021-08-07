@@ -4,8 +4,7 @@ import Contact from './component/Contact';
 import Login from './component/Login';
 import Home from './component/Home';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter as Router, Switch,
   Route,
   Link
 } from "react-router-dom";
@@ -26,11 +25,14 @@ export const App = () => {
                 <Link to= "/contact">Contact</Link>
                 <Link to= "/login">Login</Link>
                 </nav>
-                <Route exact path= "/" component={Home} />
+
+                <Switch>
+                
                 <Route path= "/about" component={About} />
                 <Route path= "/contact" component={Contact} />
                 <Route path= "/login" component={Login} />
-                
+                <Route exact path= "/" component={Home} />
+                </Switch>
               </div>
             </Router>
   
